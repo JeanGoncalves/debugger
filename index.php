@@ -7,12 +7,12 @@
 </head>
 <body>
 
-    <table>
+    <table width="100%" class="tab-header">
         <tr>
             <td>
                 <img src="https://upload.wikimedia.org/wikipedia/en/d/d9/Script_Debugger.png">
             </td>
-            <td>
+            <td align="right">
                 <div class="header">Desvendando o Debugger e o Chrome Dev Tools</div>
                 <div class="name">
                     <blockquote>com Jean Gonçalves</blockquote>
@@ -32,8 +32,8 @@
     <div class="container">
         <fieldset>
             <pre>console.count(label);</pre>
-            <p>Quando a expressão é <b>FALSE</b>, ele exibe o <b>OBJECT</b> no console com forma de Erro.</p>
-            <a href="console/assert.html">Exemplo</a>
+            <p>Exibe após o <b>LABEL</b> quantas vezes essa função foi chamada.</p>
+            <a href="console/count.html">Exemplo</a>
         </fieldset>
     </div>
 
