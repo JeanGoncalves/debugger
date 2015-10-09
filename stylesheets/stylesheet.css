@@ -77,6 +77,19 @@ header h2 {
 /* Main Content
 */
 
+#main_menu {
+
+    float: left;
+    position: absolute;
+    left: 10px;
+}
+
+#main_menu a {
+  text-decoration: none !important;
+}
+/* Main Content
+*/
+
 #main_content {
   width: 100%;
   -webkit-font-smoothing: antialiased;
