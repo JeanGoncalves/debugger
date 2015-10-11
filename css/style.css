@@ -1,0 +1,28 @@
+body {
+    width: 900px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.tab-header {
+   background-color: rgba(114, 165, 210, 0.47);
+   padding: 10px;
+}
+
+.header {
+    font-size: 22px;
+    font-family: sans-serif;
+}
+.name blockquote {
+    float: right;
+}
+pre {
+    background-color: rgba(0, 0, 0, 0.08);
+    font-size: 14px;
+    padding: 10px;
+    font-family: sans-serif;
+}
+
+.container {
+    margin: 10px;
+}
