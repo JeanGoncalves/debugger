@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
-    <script type="text/javascript" src="javascript/append.js"></script>
+    <script type="text/javascript" src="javascript/log.js"></script>
 
     <title>Debugger by JeanGoncalves</title>
   </head>
@@ -15,7 +15,7 @@
 
     <header>
       <div class="container">
-        <h1>Debugger por Jean Gonçalves</h1>
+        <h1>Debugger</h1>
         <h2>workshop para falar sobre Debugger e chrome dev tools</h2>
 
 
@@ -35,6 +35,7 @@
                 <li><a href="../pages/dirxml.html">Dirxml()</a></li>
                 <li><a href="../pages/error.html">Error()</a></li>
                 <li><a href="../pages/group.html">Group()</a></li>
+                <li><a href="../pages/groupCollapsed.html">GroupCollapsed()</a></li>
                 <li><a href="../pages/log.html">Log()</a></li>
                 <li><a href="../pages/profile.html">Profile()</a></li>
                 <li><a href="../pages/time.html">Time()</a></li>
@@ -47,10 +48,68 @@
 
         <section id="main_content">
 
-            <h3>Desenvolvimtemo</h3>
+            <h3>Log</h3>
+            <p>O <b>console.log</b> exibe uma mensagem no console do navegador. O que é interessante é que pode usar variáveis de substituição, aproveitando assim melhor esta função.</p>
+            <p>Abaixo segue os formatos para fazer a substituição:</p>
+            <table>
+                <tr>
+                    <th>Formato</th>
+                    <th>Descrição</th>
+                </tr>
+                <tr>
+                    <td align="center">%s</td>
+                    <td>Formato para valores do tipo <b>String</b></td>
+                </tr>
+                <tr>
+                    <td align="center">%d or %i</td>
+                    <td>Formato para valores do tipo <b>Integer</b></td>
+                </tr>
+                <tr>
+                    <td align="center">%f</td>
+                    <td>Formato para valores do tipo <b>Float</b></td>
+                </tr>
+                <tr>
+                    <td align="center">%o</td>
+                    <td>Formato para valores do tipo <b>DOM Elemento</b></td>
+                </tr>
+                <tr>
+                    <td align="center">%O</td>
+                    <td>Formato para valores do tipo <b>Objeto Javascript</b></td>
+                </tr>
+                <tr>
+                    <td align="center">%c</td>
+                    <td>Formato para valores de saida do tipo <b>CSS</b></td>
+                </tr>
+            </table>
+            Exemplo:
+
+            <pre>
+                
+
+var inteiro = 10;
+var string = 'Usuário';
+var floatter = 3.14;
+
+console.log('Este é um inteiro: %i, este é uma string: %s, este é um float %f', inteiro, string, floatter);
+    // Correto
+console.log('Este é um inteiro: %i, este é uma string: %s, este é um float %f', floatter, inteiro, string);
+    // Incorreto
+
+------------------------------------------------------------------------------------------------------------
+
+var parser = new DOMParser(); 
+var xml = parser.parseFromString("&#60;div&#62;&#60;h3&#62;Hello world.&#60;/h3&#62;&#60;/div&#62;", "application/xml");
+console.log("%o, %O", xml,xml);
+
+------------------------------------------------------------------------------------------------------------
+
+var css = "color:yellow; background:blue; font-size: 12pt";
+console.log("User %s has %c%d points", string, css, inteiro);
+
+            </pre>
 
             <p>Fonte:</p>
-            <blockquote>https://developer.chrome.com/devtools/docs/console-api#consolecountlabel</blockquote>
+            <blockquote>https://developer.chrome.com/devtools/docs/console-api#consolelogobject-object</blockquote>
         </section>
     </div>
 

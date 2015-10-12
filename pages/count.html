@@ -2,11 +2,9 @@
 <html>
   <head>
     <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
     <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
-    <script type="text/javascript" src="javascript/append.js"></script>
+    <script type="text/javascript" src="javascript/count.js"></script>
 
     <title>Debugger by JeanGoncalves</title>
   </head>
@@ -15,7 +13,7 @@
 
     <header>
       <div class="container">
-        <h1>Debugger por Jean Gonçalves</h1>
+        <h1>Debugger</h1>
         <h2>workshop para falar sobre Debugger e chrome dev tools</h2>
 
 
@@ -35,6 +33,7 @@
                 <li><a href="../pages/dirxml.html">Dirxml()</a></li>
                 <li><a href="../pages/error.html">Error()</a></li>
                 <li><a href="../pages/group.html">Group()</a></li>
+                <li><a href="../pages/groupCollapsed.html">GroupCollapsed()</a></li>
                 <li><a href="../pages/log.html">Log()</a></li>
                 <li><a href="../pages/profile.html">Profile()</a></li>
                 <li><a href="../pages/time.html">Time()</a></li>
@@ -47,13 +46,31 @@
 
         <section id="main_content">
 
-            <h3>Desenvolvimtemo</h3>
+            <h3>Count</h3>
+
+            <p>O <b>console.count</b> exibe a mensagem inserida e o número de vezes que foi feita a chamada para esta função.</p>
+            Exemplo:
+
+            <pre>
+                
+var valor = 5;
+
+for(var i = 0; i < valor; i++)
+    console.count('Mensagem número');
+
+            </pre>
 
             <p>Fonte:</p>
-            <blockquote>https://developer.chrome.com/devtools/docs/console-api#consolecountlabel</blockquote>
+            <blockquote>
+                <a href="https://developer.chrome.com/devtools/docs/console-api#consolecountlabel">https://developer.chrome.com/devtools/docs/console-api#consolecountlabel</a>
+            </blockquote>
         </section>
     </div>
-
+    <br>
+    <fieldset>
+        <center>Hosted by GitHubPages</center>
+        <center>Por Jean gonçalves</center>
+    </fieldset>
     
   </body>
 </html>

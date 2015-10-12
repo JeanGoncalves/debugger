@@ -4,7 +4,7 @@
     <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
-    <script type="text/javascript" src="javascript/dir.js"></script>
+    <script type="text/javascript" src="javascript/groupCollapsed.js"></script>
 
     <title>Debugger by JeanGoncalves</title>
   </head>
@@ -46,27 +46,26 @@
 
         <section id="main_content">
 
-            <h3>Dir</h3>
-
-            <p>O <b>console.dir</b> separa o valor enviado como se fosse um <i>vardump()</i>.</p>
+            <h3>GroupCollapsed</h3>
+            <p>O <b>console.groupCollapsed</b> exibe um grupo de debugs dentro da sua chamada, sendo usado em conjunto com o <b>console.groupEnd</b>.</p><p>Porém a diferença do <b>groupCollapsed</b> para o <b>group</b> é que o Collapsed mostra fechado, e o grupo já exibe todo aberto o detalhamento.</p>
             Exemplo:
 
             <pre>
                 
-var arr = ["A","B","C"];
-var obj = {
-    X: '1',
-    Y: '2',
-    Z: '3'
-};
+function authentication(name) {
+    console.log('Limpando cache');
+    console.log('Autenticando como "%s"',name);
+    console.error('Falha ao autenticar');
+}
 
-console.dir(arr);
-console.dir(obj);
+console.groupCollapsed('Iniciando autenticação');
+authentication('Jean');
+console.groupEnd();
 
             </pre>
 
             <p>Fonte:</p>
-            <blockquote>https://developer.chrome.com/devtools/docs/console-api#consolecountlabel</blockquote>
+            <blockquote>https://developer.chrome.com/devtools/docs/console-api#consolegroupobject-object</blockquote>
         </section>
     </div>
 
