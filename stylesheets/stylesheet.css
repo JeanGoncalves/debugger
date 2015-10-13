@@ -35,12 +35,31 @@ li {
    h2       - project description
 */
 
-header {
+header, footer {
   background: rgba(0, 0, 0, 0.1);
   width: 100%;
-  border-bottom: 1px dashed #b5e853;
   padding: 20px 0;
+}
+
+header {
+  border-bottom: 1px dashed #b5e853;
   margin: 0 0 40px 0;
+}
+
+footer {
+  border-top: 1px dashed #b5e853;
+  margin: 40px 0 0 0;
+}
+
+footer img {
+  border: 1px solid #b5e853;
+  width: 80px;
+  border-radius: 10px;
+  float: right;
+}
+
+footer table {
+  width: 380px;
 }
 
 header h1 {
