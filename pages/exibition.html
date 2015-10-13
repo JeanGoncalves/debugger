@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
+    <script type="text/javascript" src="javascript/dir.js"></script>
+    <script type="text/javascript" src="javascript/dirxml.js"></script>
+    <script type="text/javascript" src="javascript/group.js"></script>
+    <script type="text/javascript" src="javascript/groupCollapsed.js"></script>
+    <script type="text/javascript" src="javascript/log.js"></script>
+    <script type="text/javascript" src="javascript/profile.js"></script>
+    <script type="text/javascript" src="javascript/time.js"></script>
+
+    <title>Debugger by JeanGoncalves</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Debugger</h1>
+        <h2>workshop para falar sobre Debugger e chrome dev tools</h2>
+
+
+        <section id="downloads">
+          <a href="../" class="btn">VOLTAR</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+        <section id="main_menu">
+            <label>Menu</label><hr>
+            <ul>
+                <li><a href="../pages/notification.html">Notificações</a></li>
+                <li><a href="../pages/conditions.html">Condições</a></li>
+                <li><a href="../pages/exibition.html">Exibição</a></li>
+                <hr>
+                <li><a href="../pages/debugger.html">Debugger</a></li>
+            </ul>
+        </section>
+
+        <section id="main_content">
+
+            <h1>Condições</h1>
+
+
+            <div class="page_content">
+
+                <h3>Dir</h3>
+
+                <p>O <b>console.dir</b> separa o valor enviado como se fosse um <i>vardump()</i>.</p>
+                Exemplo:
+
+                <pre>
+                    
+    var arr = ["A","B","C"];
+    var obj = {
+        X: '1',
+        Y: '2',
+        Z: '3'
+    };
+
+    console.dir(arr);
+    console.dir(obj);
+
+                </pre>
+                <img src="../images/dir.png">
+            </div>
+            <hr>
+            <div class="page_content">
+                <h3>Dirxml</h3>
+                <p>O <b>console.dirxml</b> exibe um valor do tipo xml.</p>
+                Exemplo:
+
+                <pre>
+
+    var parser = new DOMParser(); 
+    var xml = parser.parseFromString("&#60;div&#62;&#60;h3&#62;Hello world.&#60;/h3&#62;&#60;/div&#62;", "application/xml");
+    console.dirxml(xml);
+
+                </pre>
+                <img src="../images/dirxml.png">
+            </div>
+            <hr>
+            <div class="page_content">
+                <h3>Group</h3>
+                <p>O <b>console.group</b> exibe um grupo de debugs dentro da sua chamada, sendo usado em conjunto com o <b>console.groupEnd</b></p>
+                Exemplo:
+
+                <pre>
+                    
+    function authentication(name) {
+        console.log('Limpando cache');
+        console.log('Autenticando como "%s"',name);
+        console.error('Falha ao autenticar');
+    }
+
+    console.groupCollapsed('Iniciando autenticação');
+    authentication('Jean');
+    console.groupEnd();
+
+                </pre>
+                <img src="../images/group.png">
+            </div>
+            <hr>
+            <div class="page_content">
+                <h3>GroupCollapsed</h3>
+                <p>O <b>console.groupCollapsed</b> possui a mesma função do console.group, porém a diferença do <b>groupCollapsed</b> para o <b>group</b> é que o Collapsed mostra fechado, e o grupo já exibe todo aberto o detalhamento.</p>
+                Exemplo:
+
+                <pre>
+                    
+    function authentication(name) {
+        console.log('Limpando cache');
+        console.log('Autenticando como "%s"',name);
+        console.error('Falha ao autenticar');
+    }
+
+    console.groupCollapsed('Iniciando autenticação');
+    authentication('Jean');
+    console.groupEnd();
+
+                </pre>
+                <img src="../images/groupCollapsed.png">
+            </div>
+            <hr>
+            <div class="page_content">
+                <h3>Log</h3>
+                <p>O <b>console.log</b> exibe uma mensagem no console do navegador. O que é interessante é que pode usar variáveis de substituição, aproveitando assim melhor esta função.</p>
+                <p>Abaixo segue os formatos para fazer a substituição:</p>
+                <table>
+                    <tr>
+                        <th>Formato</th>
+                        <th>Descrição</th>
+                    </tr>
+                    <tr>
+                        <td align="center">%s</td>
+                        <td>Formato para valores do tipo <b>String</b></td>
+                    </tr>
+                    <tr>
+                        <td align="center">%d or %i</td>
+                        <td>Formato para valores do tipo <b>Integer</b></td>
+                    </tr>
+                    <tr>
+                        <td align="center">%f</td>
+                        <td>Formato para valores do tipo <b>Float</b></td>
+                    </tr>
+                    <tr>
+                        <td align="center">%o</td>
+                        <td>Formato para valores do tipo <b>DOM Elemento</b></td>
+                    </tr>
+                    <tr>
+                        <td align="center">%O</td>
+                        <td>Formato para valores do tipo <b>Objeto Javascript</b></td>
+                    </tr>
+                    <tr>
+                        <td align="center">%c</td>
+                        <td>Formato para valores de saida do tipo <b>CSS</b></td>
+                    </tr>
+                </table>
+                Exemplo:
+
+                <pre>
+                    
+
+    var inteiro = 10;
+    var string = 'Usuário';
+    var floatter = 3.14;
+
+    console.log('Este é um inteiro: %i, este é uma string: %s, este é um float %f', inteiro, string, floatter);
+        // Correto
+    console.log('Este é um inteiro: %i, este é uma string: %s, este é um float %f', floatter, inteiro, string);
+        // Incorreto
+
+                </pre>
+                <img src="../images/log01.png">
+                <pre>
+                    
+    var parser = new DOMParser(); 
+    var xml = parser.parseFromString("&#60;div&#62;&#60;h3&#62;Hello world.&#60;/h3&#62;&#60;/div&#62;", "application/xml");
+    console.log("%o, %O", xml,xml);
+
+                </pre>
+                <img src="../images/log02.png">
+                <pre>
+
+
+    var css = "color:yellow; background:blue; font-size: 12pt";
+    console.log("User %s has %c%d points", string, css, inteiro);
+
+                </pre>
+                <img src="../images/log03.png">
+            </div>
+            <div class="page_content">
+                <h3>Profile</h3>
+                <p>O <b>console.profile</b> identifica quando inicia e finaliza a chamada do debug.</p>
+                Exemplo:
+
+                <pre>
+                    
+    function processPixels() {
+        console.profile("Processing pixels");  
+        console.profileEnd();
+    }
+    processPixels();
+
+                </pre>
+                <img src="../images/profile.png">
+            </div>
+            <div class="page_content">
+                <h3>Time</h3>
+                <p>O <b>console.time</b> Exibe o tempo que demorou para finalizar a chamada do debug. Funciona em conjunto ao <b>console.timeEnd</b>.</p>
+                Exemplo:
+
+                <pre>
+                    
+    console.time("Array initialize");
+
+    var num = 100000;
+
+    for(var i = 0; i < num; i++) {}
+
+    console.timeEnd("Array initialize");
+                </pre>
+                <img src="../images/time.png">
+            </div>
+            <p>Fonte:</p>
+            <blockquote>https://developer.chrome.com/devtools/docs/console-api</blockquote>
+        </section>
+    </div>
+
+
+  </body>
+</html>

@@ -1,4 +1,4 @@
-var valor = 9;
+var valor = 10;
 var maior = "O valor é maior que 9.";
 var menor = "O valor é menor que 9.";
 

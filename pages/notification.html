@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
+    <script type="text/javascript" src="javascript/info.js"></script>
+    <script type="text/javascript" src="javascript/warn.js"></script>
+    <script type="text/javascript" src="javascript/error.js"></script>
+
+    <title>Debugger by JeanGoncalves</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Debugger</h1>
+        <h2>workshop para falar sobre Debugger e chrome dev tools</h2>
+
+
+        <section id="downloads">
+          <a href="../" class="btn">VOLTAR</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+        <section id="main_menu">
+            <label>Menu</label><hr>
+            <ul>
+                <li><a href="../pages/notification.html">Notificações</a></li>
+                <li><a href="../pages/conditions.html">Condições</a></li>
+                <li><a href="../pages/exibition.html">Exibição</a></li>
+                <hr>
+                <li><a href="../pages/debugger.html">Debugger</a></li>
+            </ul>
+        </section>
+
+        <section id="main_content">
+
+            <h1>Notificações</h1>
+
+
+            <div class="page_content">
+                <h3>Info</h3>
+                <p>O <b>console.info</b> exibe uma mensagem de informação no console.</p>
+                Exemplo:
+                <pre>
+                    
+    var name = 'User';
+    console.info('Autenticação completa. Usuário: %s',name  );
+                </pre>
+                <img src="../images/info.png" height="43" width="397">
+            </div>
+            <hr>
+            <div class="page_content">
+                <h3>Warn</h3>
+                <p>O <b>console.warn</b> exibe uma mensagem de alerta no console.</p>
+                Exemplo:
+                <pre>
+                    
+    var num = 10;                
+    console.warn('Número inesperado: $i', num);
+                </pre>
+                <img src="../images/warn.png" height="43" width="397">
+            </div>
+            <hr>
+            <div class="page_content">
+                <h3>Error</h3>
+                <p>O <b>console.error</b> exibe a mensagem em formato de erro na notificação.</p>
+                Exemplo:
+                <pre>
+                    
+    function connectToServer() {    
+        var errorCode = 1;    
+        if (errorCode) {        
+            console.error("Error: %s (%i)", "Server is  not responding", 500);    
+        }
+    }
+    connectToServer();
+
+                </pre>
+                <img src="../images/error.png" height="43" width="397">
+            </div>
+            <hr>
+            <p>Fonte:</p>
+            <blockquote>https://developer.chrome.com/devtools/docs/console-api</blockquote>
+        </section>
+    </div>
+
+    
+  </body>
+</html>
